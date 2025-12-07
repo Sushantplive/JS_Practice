@@ -1,7 +1,9 @@
 //1) stack memory 
 
 /*
-  primitive type variable stored  in stack memory in that you will gets a copy of valiable not its original
+  primitive type variable stored  in stack memory.
+  in that you will gets a copy of valiable not its original.
+  deep copy happned, do not share the same refrence.
 */
 
 let myValue = "Sushant"
@@ -12,6 +14,9 @@ newVlaue = 'Vicky' // updated newValue
 
 console.log(`new value is ${newVlaue}`); // new value is Vicky
 console.log(`old value is ${myValue}`); //old value is Sushant
+/*
+deep copy : do not share the same refrence therefore 
+*/
 
 let obj1 = {
     name: 'sushant',
