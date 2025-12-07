@@ -3,6 +3,6 @@ let accountEmail = "sushant@google.com"
 var accountPwd = "123"
 accountCity = 'Pune'
 
-let accountState;
+let accountState; // we hav enot initilize so its value is undefined
 // accountId = 896 not allowed
 console.table([accountId,accountEmail,accountPwd,accountCity, accountState])
