@@ -25,6 +25,23 @@ const result1 = sayHi()
     return num;
  }
 
- const result = add(100,200,200)
-console.log(result); // [ 100, 200, 200 ]
+//  const result = add(100,200,200)
+// console.log(result); // [ 100, 200, 200 ]s
 
+// iife function
+// this is a named iife function
+//() defination
+//() to end the execution
+// (function calculate(){
+//     console.log('run iife function')
+// })()
+
+// (()=>{
+//     console.log('unnamed iffe function')
+// })()
+
+// paramaterized iffe
+
+((name)=>{
+console.log(name)
+})('sushant')
