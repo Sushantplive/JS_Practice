@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <title>javascript</title>
+    <body class="parent"  style="background-color: gray;" >
+        <h2 class="child">Welcome to js</h2>
+
+
+    </body>
+    <script>
+        //npx http-server Basics/
+        console.log('hi welcome....')
+        // console.log('parent',parent);
+        // console.log('children',parent  && parent.child)
+        // console.log('children1',parent.children)
+        const parent = document.querySelector('.parent');
+        /*
+        This is parent to child access
+        */
+        console.log('parent------>', parent)         
+        console.log('parent------>', parent.children)
+        console.log('parent------>', parent.children[0])
+
+        /* 
+        so we can access parent from child also
+        */
+
+        const child = document.querySelector('.child');
+        console.log('child node', child)
+        console.log('access parent',child.parentElement)
+
+        // create div node through js
+      const divNode = document.createElement('div')
+      console.log('div node------->', divNode)
+      divNode.className = 'created-div'
+
+      // add attribute
+      divNode.setAttribute('title', 'Hi there')
+      divNode.style.backgroundColor='red'
+
+      divNode.innerText = 'Chai or code'
+
+    //   divNode.innerHTML('this is created dive')
+    document.body.appendChild(divNode)
+
+    // create text node
+
+    const textNode = document.createElement('')
+        
+
+    </script>
+</head>
