@@ -2,6 +2,36 @@
 <head>
     <title>hi there</title>
     <body>
-        welcome to javascript
+       <p id="para1"> welcome to javascriptfgfg </p> 
     </body>
+    <script>
+        //call event in js
+        const paraElement = document.querySelector('#para1')
+        console.log(paraElement)
+        paraElement.onclick = function (){
+            console.log('You click me')
+        }
+
+        // addEventListner, 
+        /*
+           addEventListner('events', callback function)
+           ex. addEventListner('click', function(e){
+           }, true/false)
+           // using arrow function
+           addEventListner('click', (e)=>{
+           
+           }true/false)
+        */
+        paraElement.addEventListener('click',function(e){
+            console.log(e)
+        })
+
+        // so we have two consept
+        /* 
+            so we have two consept
+            event bubling -> true
+            event capturing -> false
+
+        */
+    </script>
 </head>
