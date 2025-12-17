@@ -1,0 +1,43 @@
+<!DOCTYPE >
+<html>
+<head>
+    <title>hi there</title>
+</head>
+<body>
+    <div>
+        <ul id="all-numbers">
+            <li id="one">1</li>
+            <li id="two">2</li>
+            <li id="three">3</li>
+            <li id="four">4</li>
+            <li id="five">5</li>
+        </ul>
+    </div>
+
+</body>
+<script>
+    // when I click on id 3 then remove that li
+    // add event on ul list
+    document.querySelector('#all-numbers').addEventListener('click', function(e){
+        console.log('click on all-numbers')
+    })
+
+    document.querySelector('#four').addEventListener('click', function(e){
+        e.preventDefault()// it will restrict event capturing
+        e.stopPropagation() // when we add this then it will only click on child not parent, stop propagation
+        console.log('you clcik on four')
+    })
+
+    /*
+       here when you click on four which is a child of all numbers
+       so here we got output as 
+     
+        you clcik on four
+       click on all-numbers
+
+       so from child click and then parent so event bubble up this is called event propagation
+
+    */
+
+</script>
+</html>
