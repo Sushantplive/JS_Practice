@@ -3,30 +3,29 @@
 <head>
     <title>hi there</title>
 </head>
-<body>
+<body id="main" style="background-color: black;">
     <div>
-        <ul id="all-numbers">
-            <li id="one">1</li>
-            <li id="two">2</li>
-            <li id="three">3</li>
-            <li id="four">4</li>
-            <li id="five">5</li>
+        <ul id="all-colors">
+            <li id="aqua" style="background-color: aqua;padding: 10px;margin:10px">Aqua color</li>
+            <li id="red" style="background-color: red;padding: 10px;margin:10px">Red Color</li>
+            <li id="orange" style="background-color: orange;padding: 10px;margin:10px">orange color</li>
+            <li id="pink" style="background-color: pink;padding: 10px;margin:10px">pink color</li>
+            <li id="yello" style="background-color: yellow;padding: 10px;margin:10px">yello color</li>
         </ul>
     </div>
-
 </body>
 <script>
     // when I click on id 3 then remove that li
     // add event on ul list
-    document.querySelector('#all-numbers').addEventListener('click', function(e){
-        console.log('click on all-numbers')
-    })
+    // document.querySelector('#all-numbers').addEventListener('click', function(e){
+    //     console.log('click on all-numbers')
+    // })
 
-    document.querySelector('#four').addEventListener('click', function(e){
-        e.preventDefault()// it will restrict event capturing
-        e.stopPropagation() // when we add this then it will only click on child not parent, stop propagation
-        console.log('you clcik on four')
-    })
+    // document.querySelector('#four').addEventListener('click', function(e){
+    //     e.preventDefault()// it will restrict event capturing
+    //     e.stopPropagation() // when we add this then it will only click on child not parent, stop propagation
+    //     console.log('you clcik on four')
+    // })
 
     /*
        here when you click on four which is a child of all numbers
@@ -36,8 +35,33 @@
        click on all-numbers
 
        so from child click and then parent so event bubble up this is called event propagation
+       drawback is 
+       1) Performance Overhead - Multiple handler execute unc=necessary in deep DOM
+       2) it hard to debug where behaviour originated
+       3)duplicate work
+       4) parent handler may unintentionally affect child elemant behaviour
 
     */
+
+    // grnad parent
+    document.querySelector('#main').addEventListener('click', function(e){
+       // e.preventDefault()// it will restrict event capturing
+        console.log('you click on grand parent')
+    })
+    // click for parent
+    document.querySelector('#all-colors').addEventListener('click', function(e){
+        e.preventDefault()// it will restrict event capturing
+        e.stopPropagation()
+        console.log('you click on all colors')
+    })
+
+    // first get all the colors
+    document.querySelector('#pink').addEventListener('click', function(e){
+         
+         e.stopPropagation() // when we add this then it will only click on child not parent, stop propagation
+        console.log(e)
+        console.log(`you have click on ${e.target.innerText}`)
+    })
 
 </script>
 </html>
