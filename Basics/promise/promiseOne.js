@@ -7,8 +7,8 @@
 const promiseOne =  new Promise(function(resolve, reject){
     // confugure async call like server call, for now we will ad async fun with setTimeout fun
     setTimeout(function(){
-        console.log('promise1  setTimeout run 1000 ms')
-    },1000)
+        console.log('promise1  setTimeout run 2000 ms')
+    },2000)
      resolve() 
      /**
       * as we are not passing anything so initially it console as undefined as console is 
@@ -74,3 +74,12 @@ promiseTwo.then(function(){
  * step 4: repeat
  * 
  *  */
+
+// if we change first promise settimeout time the output is like below
+
+/**
+ * Promise1 has been consume now
+promise 2 hs been consume now
+promise 2 second timeout call after 1 ms
+promise1  setTimeout run 2000 ms
+ */
