@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        hello
+    </title>
+</head>
+
+<body id="main-body">
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+    let clearColorInterval;
+    document.getElementById('start').addEventListener('click', function () {
+        const body = document.getElementById('main-body');
+        // body.style.backgroundColor='black'
+        // I WANT DYNAMIC COLOR AFTER START CLICK
+
+        // console.log(randomeColor)
+        clearColorInterval = setInterval(function () {
+            const randomeColor = '#' + Math.floor(Math.random() * 1677).toString(16)
+            console.log('randon color is applying')
+            body.style.backgroundColor = randomeColor
+        }, 1000)
+        // I want to stop that color where it is 
+        document.getElementById('stop').addEventListener('click', function () {
+            clearInterval(clearColorInterval)
+        })
+    })
+</script>
+
+</html>
