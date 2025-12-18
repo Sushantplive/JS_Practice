@@ -1,0 +1,71 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>hi js</title>
+</head>
+
+<body id="main" style="background-color: black;">
+    <div>
+        <ul id="all-colors">
+            <li id="aqua" style="background-color: aqua;padding: 10px;margin:10px">Aqua color</li>
+            <li id="red" style="background-color: red;padding: 10px;margin:10px">Red Color</li>
+            <li id="orange" style="background-color: orange;padding: 10px;margin:10px">orange color</li>
+            <li id="pink" style="background-color: pink;padding: 10px;margin:10px">pink color</li>
+            <li id="yello" style="background-color: yellow;padding: 10px;margin:10px">yello color</li>
+        </ul>
+    </div>
+</body>
+<script>
+    document.querySelector('#all-colors').addEventListener('click', function (e) {
+        console.log(e)
+        const removeElement = e.target.parentNode
+        console.log(removeElement)
+        console.log(e.target.tagName)
+        if (e.target.tagName === 'LI') {
+
+            console.log(e.target.id)
+            switch (e.target.id) {
+                case 'red':
+                    const redElement = document.querySelector('#red')
+                    console.log('you click on red dive')
+                    redElement.remove()
+                    break;
+                case 'yello':
+                    const yelloElement = document.querySelector('#yello')
+                    console.log('you click on red dive')
+                    yelloElement.remove()
+                    break;
+                case 'aqua':
+                    const aquaElement = document.querySelector('#aqua')
+                    console.log('you click on red dive')
+                    aquaElement.remove()
+                    break;
+                case 'orange':
+                    const orangeElement = document.querySelector('#orange')
+                    console.log('you click on red dive')
+                    orangeElement.remove()
+                    break;
+                case 'pink':
+                    const pinkElement = document.querySelector('#pink')
+                    console.log('you click on red dive')
+                    pinkElement.remove()
+                    break;
+
+                    default:
+                        console.log('this is default one')
+
+            }
+            // if(e.target.id === 'red'){
+            //     const redElement = document.querySelector('#red')
+            //     console.log('you click on red dive')
+            //     redElement.remove()
+            // }
+            //  removeElement.remove()
+        }
+
+    })
+
+</script>
+
+</html>
