@@ -1,0 +1,37 @@
+<!DOCTYPE>
+<head>
+    <title>hello js</title>
+    <body id="main" style="background-color: black;">
+        <div id ='parent' style="background-color: white;">
+            <a id="child" target="_blank" href="https://www.google.com/?zx=1766048181363&no_sw_cr=1">Go to Google page</a>
+
+        </div>
+    </body>
+    <script>
+
+        document.querySelector('#main').addEventListener('click', function(){
+            console.log('you click on main')
+        })
+        /*
+          When I click on parent then first it clik on parent then it also click on main which is called event propagation
+          we can stop that by e.stopPropagation
+        */
+
+        document.querySelector('#parent').addEventListener('click', function(e){
+            e.stopPropagation() // now it only console parent one not the main
+            console.log('you click on parent')
+        })
+
+        document.querySelector('#child').addEventListener('click', function(e){
+             e.preventDefault() // now even through we click on link it will not goto google
+             e.stopPropagation() // now only console this click not any parents
+             e.stopImmediatePropagation();
+            console.log('you click on para', e)
+            // href="https://www.google.com/?zx=1766048181363&no_sw_cr=1"
+        })
+        document.querySelector('#child').addEventListener('click', function(e){
+            console.log('seconf handler') 
+            // this will not run as we added e.stopImmediatePropagation(); in first handler
+        })
+    </script>
+</head>
