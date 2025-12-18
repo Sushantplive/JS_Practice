@@ -1,0 +1,41 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>async in js</title>
+</head>
+
+<body id="body">
+    <h2 id="heading2">welcome to javascript</h2>
+</body>
+<script>
+    // I want to change heading to welcome to reactjs
+    const heading2Element = document.getElementById('heading2');
+    console.log(heading2Element.innerText)
+    console.log('outside setTimeout')
+
+    setTimeout(function () {
+        console.log('first setTimeout withought timer')
+        heading2Element.innerText = 'Welcome to Reactjs1'
+    })
+
+   const secondTimer =  setTimeout(function () {
+        console.log('second setTimeout with timer 1000ms')
+        heading2Element.innerText = 'Welcome to Reactjs1'
+    },1000)
+
+    setTimeout(function () {
+        console.log('third setTimeout with timer 2000ms')
+        heading2Element.innerText = 'Welcome to Reactjs2'
+    }, 2000)
+
+    console.log('last console statement')
+
+    // now we we want to cancel particular settimeout we can do with clearTimeout
+    // but we need its refrence
+    clearTimeout(secondTimer)
+    console.log('second timer got cancelled')
+
+</script>
+
+</html>
