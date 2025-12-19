@@ -1,5 +1,9 @@
 // new keyword allow us to create multiple instances
 
+// new keywotd create a empty object {}
+// constructor fun will get call 
+// argument will by with the help of this keyword
+// you will get excat data
 // create object
 
 function User(uName, lName){
